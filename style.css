@@ -1,0 +1,534 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 1vw;
+}
+body {
+  width: 70vw;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+h1 {
+  color: #374b78;
+  text-transform: uppercase;
+  font-size: 1.8vw;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header img {
+  width: 11vw;
+}
+
+/* Slide 1 */
+.factory-section {
+  position: relative;
+  overflow: hidden;
+  height: 45vh;
+
+  /* display: none;
+  visibility: hidden;
+  opacity: 0; */
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8eee1;
+  border: 1px solid #000;
+
+  transition: transform 1s;
+}
+
+.container:last-child {
+  transform: translateX(0%);
+}
+
+.section-header {
+  display: flex;
+}
+
+.heading {
+  width: 21vw;
+  font-size: 1.5vw;
+  height: 7vh;
+  position: relative;
+  text-transform: capitalize;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.arr1 {
+  width: 12%;
+  height: 78%;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  transform: rotate(45deg);
+  position: absolute;
+  right: -7%;
+}
+
+.secondary-heading {
+  font-size: 1.5vw;
+  padding-left: 25%;
+}
+
+.content-wrapper {
+  padding: 1.5vw 0 1.5vw 0.7vw;
+  display: flex;
+  justify-content: space-between;
+  height: 85%;
+}
+
+.text-side {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+.send-msg-box {
+  margin-right: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+}
+.input-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.input-line input {
+  width: 80%;
+  padding: 8px 12px;
+}
+.btn-send-message {
+  display: block;
+  margin-left: auto;
+  padding: 4px 16px;
+}
+
+select[name="sort-msg"] {
+  width: auto;
+  margin: 3px 0 3px auto;
+}
+
+.last-messages {
+  text-align: center;
+  width: 20%;
+  margin: 0 auto;
+  background-color: #f8eee1;
+  transform: translate(0, -50%);
+}
+
+.messages {
+  overflow-y: scroll;
+}
+
+.robot-message {
+  color: black;
+  margin: 4px 0;
+}
+.robot-message span {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Robot */
+.robot-side {
+  border: 1px solid #000;
+  width: 35%;
+  height: 100%;
+  background-color: #fff;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.robot {
+  width: 100%;
+  height: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* head of robot */
+
+.head {
+  width: 17%;
+  height: 25%;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  transform: translate(-50%);
+}
+
+.eyes {
+  width: 70%;
+  height: 10px;
+  margin: 20% auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.eye {
+  width: 30%;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 150px;
+}
+.mouth {
+  width: 50%;
+  height: 20%;
+  border: 1px solid #000;
+  border-radius: 95%;
+  position: absolute;
+  top: 65%;
+  right: 25%;
+}
+
+.chest {
+  width: 30%;
+  border-top: 5vw solid #e96126;
+  border-left: 1.5vw solid transparent;
+  border-right: 1.5vw solid transparent;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%);
+}
+
+.skirt {
+  width: 30%;
+  border-bottom: 2.5vw solid red;
+  border-left: 1.5vw solid transparent;
+  border-right: 1.5vw solid transparent;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 20%;
+  z-index: 100;
+}
+
+.left-hand {
+  width: 4%;
+  height: 31%;
+  background-color: #e9e8e8;
+  border: 1px solid #000;
+  border-radius: 3px;
+  position: absolute;
+  top: 32%;
+  left: 32%;
+}
+.right-hand {
+  width: 4%;
+  height: 31%;
+  background-color: #e9e8e8;
+  border: 1px solid #000;
+  border-radius: 3px;
+  position: absolute;
+  top: 32%;
+  right: 32%;
+}
+
+.leg {
+  width: 4.5%;
+  height: 30%;
+  border: 1px solid #000;
+  border-radius: 2px;
+  position: absolute;
+}
+
+.left-leg {
+  top: 67%;
+  left: 43%;
+}
+.right-leg {
+  top: 67%;
+  right: 43%;
+}
+
+.robot-side p {
+  margin: 10px auto;
+}
+
+/* buttons */
+
+.btns {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin: 24px;
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.btns-active {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s;
+}
+
+.btns button {
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+/* Create robot */
+.section-create-robot {
+  border: 1px solid #000;
+  background-color: #b5ddb5;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+}
+.title {
+  font-size: 1.4vw;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4vw 0;
+  border-bottom: 1px solid #000;
+}
+.option-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 2% 0 2%;
+  height: 40%;
+}
+.input-name {
+  width: 22%;
+}
+.input-name input {
+  padding-left: 3%;
+}
+
+.select-type {
+  width: 22%;
+}
+.option-box p {
+  margin-bottom: 4%;
+}
+.box input,
+select {
+  border-radius: 5px;
+  height: 35%;
+  width: 100%;
+}
+.option {
+  display: flex;
+  align-items: center;
+  margin: 15% 0;
+}
+.options input {
+  margin-right: 5%;
+}
+.write-comments textarea {
+  width: 100%;
+  height: 90%;
+  resize: none;
+  border: 1px solid #000;
+  text-align: center;
+  padding: 5% 10%;
+}
+.buttons {
+  padding: 0 2%;
+  border-bottom: 1px solid #000;
+}
+.button {
+  margin-right: 3%;
+  margin-bottom: 2%;
+  padding: 1% 4%;
+  border-radius: 5px;
+  border: 1px solid #000;
+}
+
+.robots-num {
+  margin: 12px 0;
+}
+.robots-num p {
+  text-align: center;
+}
+
+/* table */
+table {
+  width: 95%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  margin: 0 auto;
+}
+th,
+td {
+  border: 1px solid #919090;
+  padding: 8px 12px;
+  text-align: center;
+  width: 21%;
+  height: 40px;
+}
+th:last-child,
+td:last-child {
+  width: 35%;
+}
+thead th {
+  background-color: #d4d3d3;
+}
+tbody {
+  background-color: #eee;
+}
+.color-box {
+  border: 1px solid #000;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  background-color: #e96126;
+}
+.bubble {
+  min-width: 200px;
+  margin: 10% auto;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 5%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  font-family: arial;
+  position: relative;
+  top: -20%;
+  right: -50%;
+  z-index: 1000;
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.bubble:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 12px solid #000;
+  border-right: 10px solid transparent;
+  border-top: 12px solid #000;
+  border-bottom: 10px solid transparent;
+  left: 21px;
+  bottom: -14px;
+  transform: rotate(15deg);
+}
+
+.bubble:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #fff;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  left: 24px;
+  bottom: -11px;
+  transform: rotate(14deg);
+}
+
+.remove {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.active {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* animations classes */
+.speak {
+  animation: robotSpeak 2s infinite;
+}
+
+.blink {
+  animation: robotBlink 1s infinite;
+}
+
+.jump {
+  animation: robotJump 2s infinite;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes robotSpeak {
+  0% {
+    border-radius: 50%;
+    width: 35%;
+    height: 40%;
+    top: 59%;
+    right: 33%;
+  }
+  50% {
+    width: 50%;
+    height: 20%;
+    border-radius: 95%;
+    top: 64%;
+    right: 24%;
+  }
+
+  100% {
+    border-radius: 50%;
+    width: 35%;
+    height: 40%;
+    top: 59%;
+    right: 33%;
+  }
+}
+@keyframes robotJump {
+  0% {
+    width: 4.5%;
+    height: 30%;
+  }
+  50% {
+    width: 4.5%;
+    height: 17%;
+  }
+  100% {
+    width: 4.5%;
+    height: 30%;
+  }
+}
+
+@keyframes robotBlink {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 30%;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Robot</title>
+  </head>
+  <body>
+    <header class="header">
+      <h1>robot factory</h1>
+      <a href="https://www.playtech.com/" target="_blank"
+        ><img src="logoplaytech.JPG" alt="logo playtech"
+      /></a>
+    </header>
+    
+    <div class="btns">
+      <button type="button" class="prev-btn btn">&#8249 Previous</button>
+      <button type="button" class="next-btn btn">Next &#8250</button>
+    </div>
+    <section class="section-create-robot">
+      <div class="title">Create robot</div>
+      <div class="option-box">
+        <div class="input-name box">
+          <p>Name *</p>
+          <input type="text" name="name" id="robot-name" placeholder="Name" />
+        </div>
+        <div class="select-type box">
+          <p>Select type *</p>
+          <select name="robot-type" id="robot-type">
+            <option selected></option>
+            <option value="Male">Male Robot</option>
+            <option value="Female">Female Robot</option>
+          </select>
+        </div>
+        <div class="select-color box">
+          <p>Select color *</p>
+          <input
+            type="color"
+            name="robot-color"
+            id="robot-color"
+            value="#e96126"
+          />
+        </div>
+        <div class="select-options">
+          <p>Select Options</p>
+          <div class="options">
+            <div class="option">
+              <input type="checkbox" name="checkbox" id="jump" checked />
+              <label for="jump">can jump</label>
+            </div>
+            <div class="option">
+              <input type="checkbox" name="checkbox1" id="talk" checked />
+              <label for="talk">can talk</label>
+            </div>
+            <div class="option">
+              <input type="checkbox" name="checkbox2" id="blink" checked />
+              <label for="blink">can blink</label>
+            </div>
+          </div>
+        </div>
+        <div class="write-comments box">
+          <p>Robot phrase</p>
+          <textarea
+            name="phrase"
+            id="robot-phrase"
+            cols="20"
+            rows="5"
+            placeholder="text area"
+          ></textarea>
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="button" type="submit" id="create-robot">Create</button>
+        <button class="button" id="show-robot">Show Created Robots</button>
+        <button class="button" id="clear-local-storage">Clear LocalStorage</button>
+        <button class="button" id="show-message">show msg</button>
+
+      </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
