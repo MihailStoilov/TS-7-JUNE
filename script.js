@@ -310,12 +310,12 @@ function dynamicRobot() {
             remElement.firstChild.remove();
         }
         if (btnSortMessage.value === "Newest") {
-            whichRobotFromSelect.getOldestMessages().forEach((msg) => {
+            whichRobotFromSelect.getNewestMessages().forEach((msg) => {
                 remElement.appendChild(msg);
             });
         }
         else {
-            whichRobotFromSelect.getNewestMessages().forEach((msg) => {
+            whichRobotFromSelect.getOldestMessages().forEach((msg) => {
                 remElement.appendChild(msg);
             });
         }

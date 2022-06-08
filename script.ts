@@ -543,11 +543,11 @@ function dynamicRobot(): void {
       remElement.firstChild.remove();
     }
     if (btnSortMessage.value === "Newest") {
-      whichRobotFromSelect.getOldestMessages().forEach((msg): void => {
+      whichRobotFromSelect.getNewestMessages().forEach((msg): void => {
         remElement.appendChild(msg);
       });
     } else {
-      whichRobotFromSelect.getNewestMessages().forEach((msg): void => {
+      whichRobotFromSelect.getOldestMessages().forEach((msg): void => {
         remElement.appendChild(msg);
       });
     }
