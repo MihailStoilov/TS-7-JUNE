@@ -276,12 +276,6 @@ function dynamicRobot() {
             document.querySelectorAll(".messages").forEach((m) => {
                 const messageEl = document.createElement("div");
                 messageEl.classList.add("message");
-                if (btnSortMessage.value === "Oldest") {
-                    m.insertAdjacentElement("beforeend", messageEl);
-                }
-                else {
-                    m.insertAdjacentElement("afterbegin", messageEl);
-                }
                 const robotMessageEl = document.createElement("p");
                 robotMessageEl.classList.add("robot-message");
                 const spanMessage = document.createElement("span");
@@ -294,6 +288,12 @@ function dynamicRobot() {
                 messageContentEl.textContent = inputEl.value;
                 spanMessage.textContent = `  ${currentTime}`;
                 robotMessageEl.appendChild(spanMessage);
+                if (btnSortMessage.value === "Oldest") {
+                    m.insertAdjacentElement("beforeend", messageEl);
+                }
+                else {
+                    m.insertAdjacentElement("afterbegin", messageEl);
+                }
             });
             const sound = new Audio("sound.mp3");
             sound.play();
@@ -302,23 +302,20 @@ function dynamicRobot() {
         event.preventDefault();
     });
     btnSortMessage.addEventListener("change", () => {
-        let whichSelect = Number(btnSortMessage.getAttribute("id").slice(-1));
-        let whichRobotFromSelect = robots[whichSelect - 1];
-        let parent = document.querySelector(`#slide-${whichSelect}`);
-        let remElement = parent.querySelector(".messages");
-        while (remElement.firstChild) {
-            remElement.firstChild.remove();
-        }
+        const selects = document.querySelectorAll(".btn-sort-message");
         if (btnSortMessage.value === "Newest") {
-            whichRobotFromSelect.getNewestMessages().forEach((msg) => {
-                remElement.appendChild(msg);
+            selects.forEach((btn) => {
+                btn.value = "Newest";
             });
         }
         else {
-            whichRobotFromSelect.getOldestMessages().forEach((msg) => {
-                remElement.appendChild(msg);
+            selects.forEach((btn) => {
+                btn.value = "Oldest";
             });
         }
+        document.querySelectorAll(".messages").forEach((m) => {
+            m.append(...Array.from(m.childNodes).reverse());
+        });
     });
 }
 robotTalk.addEventListener("change", () => {

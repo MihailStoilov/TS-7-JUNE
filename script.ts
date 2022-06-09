@@ -494,11 +494,7 @@ function dynamicRobot(): void {
           "div"
         ) as HTMLDivElement;
         messageEl.classList.add("message");
-        if (btnSortMessage.value === "Oldest") {
-          m.insertAdjacentElement("beforeend", messageEl);
-        } else {
-          m.insertAdjacentElement("afterbegin", messageEl);
-        }
+
         const robotMessageEl: HTMLParagraphElement = document.createElement(
           "p"
         ) as HTMLParagraphElement;
@@ -517,6 +513,11 @@ function dynamicRobot(): void {
         messageContentEl.textContent = inputEl.value;
         spanMessage.textContent = `  ${currentTime}`;
         robotMessageEl.appendChild(spanMessage);
+        if (btnSortMessage.value === "Oldest") {
+          m.insertAdjacentElement("beforeend", messageEl);
+        } else {
+          m.insertAdjacentElement("afterbegin", messageEl);
+        }
       });
 
       const sound: HTMLAudioElement = new Audio("sound.mp3");
@@ -528,29 +529,21 @@ function dynamicRobot(): void {
   });
 
   btnSortMessage.addEventListener("change", (): void => {
-    let whichSelect: number = Number(
-      btnSortMessage.getAttribute("id")!.slice(-1)
-    );
-    let whichRobotFromSelect: Robot = robots[whichSelect - 1];
-    let parent: HTMLDivElement = document.querySelector(
-      `#slide-${whichSelect}`
-    )! as HTMLDivElement;
-    let remElement: HTMLDivElement = parent.querySelector(
-      ".messages"
-    )! as HTMLDivElement;
-
-    while (remElement.firstChild) {
-      remElement.firstChild.remove();
-    }
+    const selects: NodeListOf<HTMLSelectElement> =
+      document.querySelectorAll(".btn-sort-message");
     if (btnSortMessage.value === "Newest") {
-      whichRobotFromSelect.getNewestMessages().forEach((msg): void => {
-        remElement.appendChild(msg);
+      selects.forEach((btn) => {
+        btn.value = "Newest";
       });
     } else {
-      whichRobotFromSelect.getOldestMessages().forEach((msg): void => {
-        remElement.appendChild(msg);
+      selects.forEach((btn) => {
+        btn.value = "Oldest";
       });
     }
+
+    document.querySelectorAll(".messages").forEach((m) => {
+      m.append(...Array.from(m.childNodes).reverse());
+    });
   });
 }
 
